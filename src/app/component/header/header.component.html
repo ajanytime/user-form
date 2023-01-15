@@ -1,1 +1,13 @@
-<p>header works!</p>
+<nav class="navbar">
+  <h2 class="title">
+    {{ "nav.title" | translate }}
+  </h2>
+  <select class="lang-toggle" #langSelect (change)="useLanguage(langSelect.value)">
+    <option
+      *ngFor="let lang of languages"
+      [value]="lang.code"
+      [selected]="lang.code === currentLang">
+      {{ lang.label }}
+    </option>
+  </select>
+</nav>

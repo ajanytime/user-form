@@ -1,4 +1,4 @@
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 export class User {
   name: string;
@@ -12,8 +12,17 @@ export class User {
   form() {
     return new FormGroup({
       name: new FormControl(this.name),
-      email: new FormControl(this.email),
-      postalCode: new FormControl(this.postalCode),
+      email: new FormControl(this.email, {
+        validators: [Validators.required, Validators.email],
+      }),
+      postalCode: new FormControl(this.postalCode, {
+        validators: [
+          Validators.required,
+          Validators.pattern(
+            /^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i
+          ),
+        ],
+      }),
     });
   }
 

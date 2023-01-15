@@ -1,0 +1,56 @@
+.form {
+  display: flex;
+  border-color: gainsboro;
+  border-radius: 5px;
+
+  legend {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  .field {
+    flex: 50% !important;
+    padding: 15px;
+    min-height: 70px;
+
+    .error {
+      color: crimson;
+    }
+  }
+
+  .submit {
+    height: 40px;
+    border-radius: 5px;
+    background-color: slategrey;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    position: relative;
+    top: 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  .form {
+    flex-direction: column;
+
+    .submit {
+      height: 40px;
+      border-radius: 5px;
+      background-color: slategrey;
+      color: white;
+      font-weight: 400;
+      font-size: 14px;
+      position: relative;
+      top: 0px !important;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.mat-mdc-input-element {
+  height: 40px !important;
+}

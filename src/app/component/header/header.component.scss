@@ -1,0 +1,20 @@
+.navbar {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  min-height: 1rem;
+  margin-bottom: 0.5rem;
+
+  .title {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+
+  .lang-toggle {
+    float: right;
+    margin-right: 0.5rem;
+    border: none;
+  }
+}

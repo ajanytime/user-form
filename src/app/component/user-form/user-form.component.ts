@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { TranslateModule } from '@ngx-translate/core';
 import { User } from 'src/app/model/user.model';
 import { BaseComponent } from '../base.component';
-import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-user-form',
@@ -11,13 +12,13 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./user-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatInputModule]
+  imports: [CommonModule, ReactiveFormsModule, MatInputModule, TranslateModule]
 })
 export class UserFormComponent extends BaseComponent implements OnInit {
   f: FormGroup;
 
   get form() {
-    return this.f?.controls;
+    return this.f?.controls as any;
   }
 
   override ngOnInit() {

@@ -1,0 +1,11 @@
+{
+    "nav.title": "APP",
+    "legend": "Formulaires utilisateur",
+    "form.name": "Nom de famille",
+    "form.email": "E-mail",
+    "form.postal.code": "Code postal",
+    "form.btn.submit": "S'inscrire",
+
+    "validation.bad.email": "Le courriel est invalide",
+    "validation.bad.postal": "Le code postal est invalide"
+}
