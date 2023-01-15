@@ -1,5 +1,5 @@
 <article *ngIf="f">
-  <form novalidate [formGroup]="f">
+  <form novalidate [formGroup]="f" (submit)="submit()">
     <fieldset class="form">
       <legend>{{ "legend" | translate }}</legend>
       <!-- name -->
@@ -34,4 +34,12 @@
       </button>
     </fieldset>
   </form>
+  <section class="fake-submission" *ngIf="submitted">
+    <p>
+      {{ "fake.response" | translate }}
+    </p>
+    <p>
+      {{ user | json }}
+    </p>
+  </section>
 </article>

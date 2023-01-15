@@ -12,10 +12,12 @@ import { BaseComponent } from '../base.component';
   styleUrls: ['./user-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatInputModule, TranslateModule]
+  imports: [CommonModule, ReactiveFormsModule, MatInputModule, TranslateModule],
 })
 export class UserFormComponent extends BaseComponent implements OnInit {
   f: FormGroup;
+  user: User;
+  submitted = false;
 
   get form() {
     return this.f?.controls as any;
@@ -26,8 +28,17 @@ export class UserFormComponent extends BaseComponent implements OnInit {
     this.bindForm();
   }
 
-  bindForm() {
-    this.f = new User().form();
+  submit() {
+    this.user = new User(this.f.getRawValue());
+    console.log('submitting', this.user);
+    this.submitted = true;
+    setTimeout(() => {
+      this.submitted = false;
+      this.cd();
+    }, 5000);
   }
 
+  private bindForm() {
+    this.f = new User().form();
+  }
 }

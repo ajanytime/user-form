@@ -5,6 +5,7 @@
     "form.email": "E-mail",
     "form.postal.code": "Code postal",
     "form.btn.submit": "S'inscrire",
+    "fake.response": "Eh bien, il n'y a pas de backend pour cette application, cet utilisateur disparaîtra dans 5 secondes...",
 
     "validation.bad.email": "Le courriel est invalide",
     "validation.bad.postal": "Le code postal est invalide"
